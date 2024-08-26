@@ -17,13 +17,7 @@
         if (
             !empty($update["message"]["is_automatic_forward"])
         ) {
-            $qwe = http_build_query([
-                "chat_id" => $discussionChatId,
-                "text" => $comment,
-                "parse_mode" => "MarkdownV2",
-                "reply_to_message_id" =>
-                    $update["message"]["message_id"],
-            ]);
+
             file_get_contents(
                 "https://api.telegram.org/bot$botToken/sendMessage",
                 false,
